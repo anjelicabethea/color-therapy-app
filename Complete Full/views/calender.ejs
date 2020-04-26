@@ -1,0 +1,85 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width-device-width, initial-scale-1.0">
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+      <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+        <title>My Chart.js Chart</title>
+    </head>
+  </html>
+</head>
+<body>
+  <div class="ct-chart ct-perfect-fourth"></div>
+<div class="container">
+<canvas id="myChart" width="300" height="300"></canvas>
+</div>
+
+<script>
+let myChart = document.getElementById('myChart').getContext('2d');
+
+// Global Options
+Chart.defaults.global.defaultFontFamily = 'Lato';
+Chart.defaults.global.defaultFontSize = 18;
+Chart.defaults.global.defaultFontColor = '#777';
+
+let colorChart = new Chart(myChart, {
+  type:'line', //bar, horizontal,pie etc.
+  data:{
+    labels:['mon','tues','weds','thurs','fri'],
+    datasets:[{
+      label:'colors',
+      data:[
+        300,
+        300,
+        300,
+        300,
+        300,
+
+
+      ],
+      backgroundColor:[
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(255, 99, 132, 0.6)'
+      ],
+      borderWidth:1,
+      borderColor:'#777',
+      hoverBorderWidth:3,
+      hoverBorderColor:'#000'
+    }]
+  },
+
+},
+options:{
+title:{
+  display:true,
+  text:'',
+  fontSize:25
+},
+legend:{
+  display:true,
+  position:'right',
+  labels:{
+    fontColor:'#000'
+  }
+},
+layout:{
+  padding:{
+    left:50,
+    right:0,
+    bottom:0,
+    top:0
+  }
+},
+tooltips:{
+  enabled:true
+}
+}
+});
+</script>
+<script src="/main.js"></script>
+</body>
+</html>
