@@ -5,5 +5,34 @@
 
 }
 body{
-  background-color:red;
+  padding-top:80px;
+  /* word-wrap:break-word; */
+font-family: 'Open Sans', sans-serif;
+  color: white;
+  
+   text-align: center;
+
+}
+#hold{
+
+}
+#mess{
+  border: 2px solid white;
+      /* text-align: center; */
+      padding-top: 2%;
+      margin-bottom: 1%;
+      border-radius: 8%;
+
+}
+#chatSubmit{
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  width: 48px;
+  height: 19px;
+
+}
+.titleR{
+
+  font-size: 5em;
 }

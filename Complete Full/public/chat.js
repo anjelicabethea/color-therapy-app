@@ -1,4 +1,4 @@
-
+var trash = document.getElementsByClassName('fa-trash');
 document.querySelector('#chatSubmit').addEventListener('click',function (e) {
   e.preventDefault()
   const uName = document.querySelector('#uName').getAttribute('data-name')
@@ -21,14 +21,44 @@ document.querySelector('#chatSubmit').addEventListener('click',function (e) {
     })
   })
   .then(response => {
+      window.location.reload();
     console.log(response)
     if (response.ok) return response.json()
-    // window.location.reload(true)
+
   })
   .then(data => {
-    console.log('data', data)
+    // console.log('data', data)
 
-    location.reload(true);
+    // window.location.reload(true);
 
   })
+});
+
+//method copies Array instance from an iterable object.
+Array.from(trash).forEach(function (element) {
+  element.addEventListener('click', function () {
+
+      //text content, represents content of descendants
+    const name = this.parentNode.parentNode.childNodes[1].innerText;
+    const msg = this.parentNode.parentNode.childNodes[3].innerText;
+    fetch('/talk', {
+      //the head, for the delete functionality
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      //turns objects to a string
+      body: JSON.stringify({
+        name: name,
+        msg: msg,
+      }),
+      //then... refreshes the page
+
+    }).then(function (response) {
+      window.location.reload();
+    console.log(response)
+    if (response.ok) return response.json()
+
+    });
+  });
 });

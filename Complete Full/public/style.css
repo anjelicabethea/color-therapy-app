@@ -1,14 +1,17 @@
  body{
   padding-top:80px;
   /* word-wrap:break-word; */
-font-family: 'Open Sans', sans-serif;
-  color: white;
-    background: -webkit-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-   text-align: center;
+      font-family: 'Neuton', serif;
+  color: black;
+    text-align: center;
+    background: url(/img/cover.png);
+    background-size: cover;
+    background-size: 100% 830px;
+    background-repeat: no-repeat;
+
 }
-h1{
-font-family: 'Open Sans', sans-serif;
-}
+
+
 /* these are all the colors of your words*/
 .par{
   float:left;
@@ -27,19 +30,41 @@ font-family: 'Open Sans', sans-serif;
   color: blue;
 }
 .smallButn{
-  margin-left: 50px;
+margin-left: -71px;
   margin-right: -900px;
+  font-size: 24px;
 }
 .rd{
   color: red;
 }
 #b{
-  border-radius: 20%;
   height: 20px;
   width: 20px;
-  border: 2px solid white;
-  background-color: transparent;
-  color: white;
+    padding: 0 20px;
+  min-width: 160px;
+height: 50px;
+background-color: #54b2a0;
+font-size: 31px;
+color: #fff;
+line-height: 1.2;
+margin-right: 11px;
+
+}
+#l{
+  height: 20px;
+  width: 20px;
+    padding: 0 20px;
+  min-width: 160px;
+height: 50px;
+background-color: #54b2a0;
+font-size: 31px;
+color: #fff;
+line-height: 1.2;
+margin-left:20px;
+
+}
+.span{
+  margin:0,2%;
 }
 .form-control{
   border:2px solid #cf0cc0;
@@ -119,7 +144,6 @@ body {
 	margin: 0;
 	padding: 0;
 
-	font-family: 'Oxygen', sans-serif;
 	font-size: 13px;
 
 }

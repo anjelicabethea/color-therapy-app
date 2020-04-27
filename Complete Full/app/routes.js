@@ -1,4 +1,5 @@
 module.exports = function(app, passport, db, ObjectId){
+  //function that is taking in app, passport etc
   // const mood = require ('../app/moodapi.json')
 
   // normal routes ===============================================================
@@ -60,7 +61,7 @@ module.exports = function(app, passport, db, ObjectId){
     })
   });
 //chatroom===
-
+//pass query apram get color
 app.get('/chat/:room', function(req, res) {
   let color=req.params.room
   var uId = ObjectId(req.session.passport.user)
@@ -69,7 +70,7 @@ app.get('/chat/:room', function(req, res) {
   db.collection('users').find({"_id": uId}).toArray((err, user) => {
     if (err) return console.log(err)
     uName = user[0].local.userName
-
+//filter out color
     db.collection('messages').find({color:color}).toArray((err, result) => {
 
       if (err) return console.log(err)
@@ -97,12 +98,13 @@ app.get('/chat/:room', function(req, res) {
 });
 
   // message board routes ===============================================================
+//  create a post in the chatroom
   app.post('/talk', (req, res) => {
     console.log(req.body.color, 'color')
     db.collection('messages').save({color: req.body.color, msg: req.body.msg}, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.redirect(`/chat/${req.body.color}`)
+      res.render(`/chat/${req.body.color}`)
         // res.send('success')
     })
   })
@@ -117,6 +119,19 @@ app.get('/chat/:room', function(req, res) {
 
     })
   })
+
+app.put('/dayColor',(req,res)=>{
+  console.log(req.body)
+  let color = req.body.color
+  let userId = ObjectId(req.user._id)
+  console.log(userId)
+  db.collection('users').findOneAndUpdate({_id: userId},{
+    $push:{[color]: 1}
+  })
+
+})
+
+
 
   app.put('/messages', (req, res) => {
     db.collection('messages')
@@ -157,6 +172,13 @@ app.get('/chat/:room', function(req, res) {
   })
 
 
+    app.delete('/talk', (req, res) => {
+      console.log(req.body)
+      db.collection('messages').findOneAndDelete({'msg.userName': req.body.name,'msg.msg': req.body.msg}, (err, result) => {
+        if (err) return res.send(500, err)
+        res.send('Message deleted!')
+      })
+    })
   // =============================================================================
   // AUTHENTICATE (FIRST LOGIN) ==================================================
   // =============================================================================

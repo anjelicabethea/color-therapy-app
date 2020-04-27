@@ -2,19 +2,22 @@
 <html>
 <head>
   <title>Color Therapy</title>
-  <link rel="stylesheet" href="private.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/private.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <div class="messages grid-container">
+  <h1 class="titleR">Color Therapy Chat</h1>
+
+  <div id="hold" class="messages grid-container">
     <!-- //embeded javascript tempates
     //loops through message array -->
     <% for(var i=0; i< messages.length; i++) {%>
       <!-- //for every message put inside this -->
-      <div class="message">
+      <div id="mess"class="message">
+
         <span><%= messages[i].msg.userName%></span>
         <span><%= messages[i].msg.msg %></span>
-
         <span><i class="fa fa-trash" aria-hidden="true"></i></span>
       </div>
       <!-- closes the loop, makes a div everytime it iterates -->
@@ -25,8 +28,9 @@
       <span id="uName" data-name="<%= uName%>"></span>
       <span id="uId"data-id="<%=uId%>"></span>
       <span id="color"  data-color="<%=color%>"></span>
-      <button id="chatSubmit"type="button" name="button">submit</button>
+      <button id="chatSubmit"type="submit" name="button">submit</button>
     </form>
     <script src="/chat.js"></script>
+    <script src="https://kit.fontawesome.com/077191d827.js" crossorigin="anonymous"></script>
   </body>
   </html>
