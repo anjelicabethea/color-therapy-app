@@ -1,13 +1,46 @@
- body,h1{
+ body{
   padding-top:80px;
-  word-wrap:break-word;
-  font-family: 'Quicksand', sans-serif;
-  color: #ff1e47;
-
+  /* word-wrap:break-word; */
+font-family: 'Open Sans', sans-serif;
+  color: white;
+    background: -webkit-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
    text-align: center;
 }
+h1{
+font-family: 'Open Sans', sans-serif;
+}
+/* these are all the colors of your words*/
+.par{
+  float:left;
 
-
+}
+.yw{
+  color: yellow;
+}
+.pe{
+  color: purple;
+}
+.gn{
+  color: green;
+}
+.be{
+  color: blue;
+}
+.smallButn{
+  margin-left: 50px;
+  margin-right: -900px;
+}
+.rd{
+  color: red;
+}
+#b{
+  border-radius: 20%;
+  height: 20px;
+  width: 20px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+}
 .form-control{
   border:2px solid #cf0cc0;
 }
@@ -26,47 +59,55 @@ img{
 }
 
 .red {
-  border-radius: 50%;
-  background: red;
-  height: 100px;
-  width: 100px;
+  border: 2px solid red;
+  background: transparent;
+  height: 35px;
+  width: 89px;
   outline: 0;
 }
 
 .blue {
-  border-radius: 50%;
-  background: blue;
-  height: 100px;
-  width: 100px;
+  border: 2px solid blue;
+  background: transparent;
+  height: 35px;
+  width: 89px;
   outline: 0;
 }
 
 .green {
-  border-radius: 50%;
-  background: green;
-  height: 100px;
-  width: 100px;
+  border: 2px solid green;
+  background: transparent;
+  height: 35px;
+  width: 89px;
   outline: 0;
 }
 
 .purple {
-  border-radius: 50%;
-  background: purple;
-  height: 100px;
-  width: 100px;
+  border: 2px solid purple;
+  background: transparent;
+  height: 35px;
+  width: 89px;
   outline: 0;
 }
 
 
 .yellow {
-  border-radius: 50%;
-  background: yellow;
-  height: 100px;
-  width: 100px;
+  border: 2px solid yellow;
+  background: transparent;
+  height: 35px;
+  width: 89px;
   outline: 0;
 }
-
-
+.whole{
+  border:2px solid white;
+  width:50%;
+  float: left;
+}
+.use{
+  border:2px solid white;
+  width:50%;
+  float: left;
+}
 
 /*
 Design by TEMPLATED
@@ -77,26 +118,28 @@ Released for free under the Creative Commons Attribution License
 body {
 	margin: 0;
 	padding: 0;
-	background: #E5E6DD;
+
 	font-family: 'Oxygen', sans-serif;
 	font-size: 13px;
-	color: #8A8985;
-}
 
+}
+.signUp p a{
+
+}
 h1, h2, h3 {
 	margin: 0;
 	padding: 0;
 	text-transform: uppercase;
 	font-weight: 300;
-	color: #7D7764;
+	color: #fffcfc;
 }
 
 h1 {
-	font-size: 2em;
+	  font-size: 6em;
 }
 
 h2 {
-	font-size: 2.8em;
+	font-size: 2em;
 }
 
 h3 {
@@ -121,7 +164,7 @@ a:hover {
 
 #wrapper {
 	overflow: hidden;
-	background: #F1F2E9;
+
 }
 
 .container {
@@ -189,7 +232,7 @@ a:hover {
 	border: none;
 	background: none;
 	text-decoration: none;
-	color: #3C342E;
+
 }
 
 /* Splash */
@@ -252,7 +295,7 @@ a:hover {
 	overflow: hidden;
 	height: 52px;
 	margin-bottom: 2em;
-	background: #000000;
+
 }
 
 #menu {
@@ -551,6 +594,7 @@ a:hover {
 #three-column {
 	overflow: hidden;
 	padding: 10px 0px 50px 0px;
+
 }
 
 #three-column .tbox1 {
@@ -576,23 +620,32 @@ a:hover {
 
 .box-style01
 {
+  border:2px solid white;
+  height: 215px;
+  background-color:transparent;
 }
 
 
 .box-style02
 {
+  border:2px solid white;
+  height: 215px;
+  background-color:transparent;
 }
 
 .box-style03
 {
+  border:2px solid white;
+  height: 215px;
+  background-color:transparent;
 }
 
 
-.box-style h2 {
+.box-style  {
 	padding: 10px 0px;
 	letter-spacing: -1px;
 	font-size: 22px;
-	color: #2D2D2D;
+	color: white;
 }
 
 .box-style .image {
@@ -617,9 +670,12 @@ a:hover {
 
 .button
 {
-	display: inline-block;
-	margin: 1em 0em;
-	background: #000;
-	padding: 1em 2em;
-	color: #FFFFFF;
+  display: inline-block;
+  margin: 1em 0em;
+  height: 42px;
+  width: 98px;
+  border-radius: 20%;
+  border: 2px solid white;
+  color: #FFFFFF;
+  font-size: 18px;
 }

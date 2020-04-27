@@ -113,7 +113,8 @@ app.get('/chat/:room', function(req, res) {
     db.collection('messages').save({name: req.body.name, msg: req.body.msg, feelings: req.body.feelings}, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.redirect('/profile')
+      res.redirect('/newsfeed')
+
     })
   })
 

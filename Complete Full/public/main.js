@@ -23,24 +23,24 @@ for (let i = 0; i < colors.length; i++) {
 
 //chart======
 
-var data = colors {
-  // A labels array that can contain any sort of values
-  labels: ['mon','tues','weds','thurs','fri'],
-  // Our series array that contains series objects or in this case series data arrays
-  series: [
-    [5, 2, 4, 2, 0],
-    [3, 2, 9, 5, 4, 6],
-    [5, 2, 4, 2, 0],
-    [3, 2, 9, 5, 4, 6],
-    [2, 1, -3, -4, -2, 0]
-  ],
-  backgrounColor:'green'
-};
-
-var options = {
-  width: 300,
-  height: 200
-};
+// var data {
+//   // A labels array that can contain any sort of values
+//   labels: ['mon','tues','weds','thurs','fri'],
+//   // Our series array that contains series objects or in this case series data arrays
+//   series: [
+//     [5, 2, 4, 2, 0],
+//     [3, 2, 9, 5, 4, 6],
+//     [5, 2, 4, 2, 0],
+//     [3, 2, 9, 5, 4, 6],
+//     [2, 1, -3, -4, -2, 0]
+//   ],
+//   backgrounColor:'green'
+// };
+//
+// var options = {
+//   width: 300,
+//   height: 200
+// };
 
 // Create a new line chart object where as first parameter we pass in a selector
 // that is resolving to our chart container element. The Second parameter
