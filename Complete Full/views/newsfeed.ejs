@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title></title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="main.css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-
+  <link rel="stylesheet" href="newsfeed.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Neuton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
 
 
@@ -20,11 +18,11 @@
     <div id="menu-wrapper">
       <div id="menu" class="container">
         <ul>
-          <li class="current_page_item"><a href="#">Homepage</a></li>
+          <li class="current_page_item"><a href="/profile">Homepage</a></li>
           <li><a href="/newsfeed">Newsfeed</a></li>
-          <li><a href="/calender">Calender</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="/calender">Calendar</a></li>
+          <!-- <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li> -->
         </ul>
       </div>
     </div>
@@ -40,136 +38,90 @@
 </div>
 </div> -->
 
-<body>
+    <body>
 
 
-  <div class="whole">
-    <div class="tbox1">
-      <div class="box-style box-style01">
+      <i>
+        <p>How are Hue? </p>
+      </i>
+      <i>
+        <p class="close">Select the color most relative to your mood of the day and add a short message on how you feel. </p>
+      </i>
+
+      <div class="leap">
         <div class="colors">
-          <div class="colors">
-            <button class="color red"></button>
-
-          </div>
-          <h2>Red</h2>
-          <p>You are passionate! Whether it be in anger or excitement, Red is a color that stimulates the mind the most... If you feel Red associated with failure, or danger. Explore those feelings here...</p>
-
+          <button class="color red">
+            <h2>Red</h2>
+          </button>
         </div>
-      </div>
-    </div>
-    <div class="tbox2">
-      <div class="box-style box-style02">
         <div class="colors">
-          <div class="colors">
-            <button class="color blue"></button>
-
-          </div>
-          <h2>Blue</h2>
-          <p>Blue is the place for sultry people! You are relaxed, sad, and pure. Feel the calming efects of blue group here! </p>
-
+          <button class="color blue">
+            <h2>Blue</h2>
+          </button>
         </div>
-      </div>
-    </div>
-    <div class="tbox3">
-      <div class="box-style box-style03">
         <div class="colors">
-          <div class="colors">
-            <button class="color green"></button>
-          </div>
-          <h2>Green </h2>
-          <p> Green can mean calm or free flowing, and lucky! However you are feeling today express it here!</p>
-
+          <button class="color green">
+            <h2>Green </h2>
+          </button>
         </div>
-      </div>
-    </div>
-
-
-
-    <div class="tbox1">
-      <div class="box-style box-style01">
         <div class="colors">
-          <div class="colors">
-            <button class="color purple"></button>
-
-          </div>
-          <h2>Purple</h2>
-          <p>Aged like wine purple is rich and royal!luxury, power, wisdom, creativity, and magic, it is the balancing color between red and blue's color psychologies. Be balanced and manifest thoughts in purple! </p>
-
+          <button class="color purple">
+            <h2>Purple</h2>
+          </button>
         </div>
-      </div>
-    </div>
-    <div class="tbox2">
-      <div class="box-style box-style02">
         <div class="colors">
-          <div class="colors">
-            <button class="color yellow"></button>
-
-          </div>
-          <h2>Yellow</h2>
-          <p> You are sunshine. Here is your space to be and feel positivity. </p>
+          <button class="color yellow">
+            <h2>Yellow</h2>
+          </button>
 
         </div>
+
+
+
       </div>
-    </div>
-
-  </div>
-
-
-
-
-
-  <!-- <div class="container">
-  <div class="page-header text-center">
-  <h1><span class="fas fa-key"></span> Color Therapy</h1>
-  <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-</div>
-<div class="col-sm-6">
-<img src="img/hippie-clipart-meditating-17.png" alt="">
-<div class="colors">
-<button class="color red"></button>
-<button class="color blue"></button>
-<button class="color green"></button>
-<button class="color purple"></button>
-<button class="color yellow"></button>
-</div>
-<h3>Select a color!</h3> -->
-
-<div class="use">
-  <div class="messages grid-container">
-    <!-- //embeded javascript tempates
-    //loops through message array -->
-    <% for(var i=0; i< messages.length; i++) {%> <% if (user.local.email
-      == messages[i].name) { %>
-        <!-- //for every message put inside this -->
-        <div class="message grid-item">
-          <span><%= messages[i].name%></span>
-          <span><%= messages[i].msg %></span>
-
-          <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-        </div>
-        <!-- closes the loop, makes a div everytime it iterates -->
-        <% } %> <% } %>
-      </div>
-
-      <h2>Colors help humans define emotions. This app is your space to express those emotions.Write about how our readings on your aura makes you feel! </h2>
-      <!-- condiyional checking user id, local, email -->
-      <% if (user.local.email) { %>
-
-        <form action="/messages" method="POST">
+      <form action="/newsFeedPost" method="POST">
+        <div class="holder">
           <input type="text" value="<%= user.local.email %>" name="name" />
           <input type="text" placeholder="message" name="msg" class="messageInput" />
           <button type="submit">Submit</button>
+        </div>
 
-        </form>
-        <% } %>
+
+      </form>
+
+
+      <div class="use">
+        <div class="messages grid-container">
+          <!-- //embeded javascript tempates
+    //loops through message array -->
+          <% for(var i=0; i< newsfeed.length; i++) {%> <% if (user.local.email
+      == newsfeed[i].name) { %>
+          <!-- //for every message put inside this -->
+          <div class="message grid-item">
+            <span><%= newsfeed[i].name%></span>
+            <span data-id='<%=newsfeed[i]._id%>' id='newsfeedmsg'><%= newsfeed[i].msg %></span>
+            <button class="remove">delete</button>
+            <!-- <span class="fa-trash"><i  aria-hidden="true"></i>delete</span> -->
+          </div>
+          <!-- closes the loop, makes a div everytime it iterates -->
+          <% } %> <% } %>
+        </div>
+
+
+        <!-- conditional checking user id, local, email -->
+        <!-- <% if (user.local.email) { %> -->
+
+
+        <!-- <% } %> -->
 
       </div>
 
-    </div>
+  </div>
   </div>
 
 
   <script src="main.js"></script>
-  <script src="https://kit.fontawesome.com/077191d827.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/077191d827.js" crossorigin="anonymous"></script> -->
 </body>
+
 </html>

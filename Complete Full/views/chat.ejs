@@ -1,36 +1,58 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <title>Color Therapy</title>
-  <link rel="stylesheet" href="/private.css">
+  <!-- <link rel="stylesheet" href="/private.css"> -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
+  <!-- <link rel="stylesheet" href="/main.css"> -->
+  <link rel="stylesheet" href="/vent.css">
 </head>
-<body>
-  <h1 class="titleR">Color Therapy Chat</h1>
 
-  <div id="hold" class="messages grid-container">
+<body>
+  <a href="/profile">
+    <h1 class="titleR">Color Therapy Chat</h1>
+  </a>
+
+  <ul id="hold" class="messages grid-container">
     <!-- //embeded javascript tempates
     //loops through message array -->
     <% for(var i=0; i< messages.length; i++) {%>
-      <!-- //for every message put inside this -->
-      <div id="mess"class="message">
+    <!-- //for every message put inside this -->
 
-        <span><%= messages[i].msg.userName%></span>
-        <span><%= messages[i].msg.msg %></span>
-        <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+    <li id="mess" class="message">
+      <div class="comment-main-level">
+
+        <!-- Contenedor del Comentario -->
+        <div class="comment-box">
+          <div class="comment-head">
+            <h6 class="comment-name">
+              <span data-id='<%= messages[i]._id %>'><%= messages[i].name%></span></h6>
+            <i class="fa fa-reply"></i>
+            <button class="remove">delete</button>
+          </div>
+          <div class="comment-content">
+            <span><%= messages[i].chat %></span>
+          </div>
+          <!-- closes the loop, makes a div everytime it iterates -->
+          <% } %>
+        </div>
       </div>
-      <!-- closes the loop, makes a div everytime it iterates -->
-      <% } %>
-    </div>
-    <form class="post" method="post">
-      <input id="msg" type="text" name="chat" value="" placeholder="">
-      <span id="uName" data-name="<%= uName%>"></span>
-      <span id="uId"data-id="<%=uId%>"></span>
-      <span id="color"  data-color="<%=color%>"></span>
-      <button id="chatSubmit"type="submit" name="button">submit</button>
-    </form>
-    <script src="/chat.js"></script>
-    <script src="https://kit.fontawesome.com/077191d827.js" crossorigin="anonymous"></script>
-  </body>
-  </html>
+    </li>
+
+  </ul>
+
+  <form class="post" action="/talk" method="post">
+    <input id="msg" type="text" name="chat" value="" placeholder="">
+    <span id="uName" data-name="<%= uName%>"></span>
+    <span id="uId" data-id="<%=uId%>"></span>
+    <input type="hidden" name="color" value="<%=color%>">
+    <button id="chatSubmit" type="submit">submit</button>
+  </form>
+  <script type="text/javascript" src="/color-chat.js">
+
+  </script>
+  <script src="https://kit.fontawesome.com/077191d827.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

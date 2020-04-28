@@ -35,13 +35,13 @@ module.exports = function(app, passport, db, ObjectId){
   //newsfeed=====
 
   app.get('/newsfeed', function(req, res) {
-    db.collection('messages').find().toArray((err, result) => {
+    db.collection('newsfeed').find().toArray((err, result) => {
       if (err) return console.log(err)
       // res.header("Content-Type",'application/json');
 
       res.render('newsfeed.ejs', {
         user : req.user,
-        messages: result
+        newsfeed: result
       })
     })
   });
@@ -79,6 +79,7 @@ app.get('/chat/:room', function(req, res) {
       res.render('chat.ejs', {
         uId : uId,
         uName: uName,
+        users: user,
         messages: result,
         color:color
       })
@@ -100,23 +101,24 @@ app.get('/chat/:room', function(req, res) {
   // message board routes ===============================================================
 //  create a post in the chatroom
   app.post('/talk', (req, res) => {
-    console.log(req.body.color, 'color')
-    db.collection('messages').save({color: req.body.color, msg: req.body.msg}, (err, result) => {
+    console.log(req.body)
+    let name = req.user.local.userName
+    console.log(req.user._id)
+    db.collection('messages').save({chat: req.body.chat, name: name, color: req.body.color}, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.render(`/chat/${req.body.color}`)
+      res.redirect(`/chat/${req.body.color}`)
         // res.send('success')
     })
   })
 
 
 
-  app.post('/messages', (req, res) => {
-    db.collection('messages').save({name: req.body.name, msg: req.body.msg, feelings: req.body.feelings}, (err, result) => {
+  app.post('/newsFeedPost', (req, res) => {
+    db.collection('newsfeed').save({name: req.body.name, msg: req.body.msg, feelings: req.body.feelings}, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
       res.redirect('/newsfeed')
-
     })
   })
 
@@ -164,8 +166,18 @@ app.put('/dayColor',(req,res)=>{
     })
   })
 
-  app.delete('/messages', (req, res) => {
-    db.collection('messages').findOneAndDelete({name: req.body.name, msg: req.body.msg}, (err, result) => {
+  app.delete('/chatdelete', (req, res) => {
+    console.log(req.body);
+    let id = ObjectId(req.body.id)
+    db.collection('messages').findOneAndDelete({_id: id}, (err, result) => {
+      if (err) return res.send(500, err)
+      res.send('Message deleted!')
+    })
+  })
+  app.delete('/newsfeeddelete', (req, res) => {
+    console.log(req.body);
+    let id = ObjectId(req.body.id)
+    db.collection('newsfeed').findOneAndDelete({_id: id}, (err, result) => {
       if (err) return res.send(500, err)
       res.send('Message deleted!')
     })
@@ -174,6 +186,7 @@ app.put('/dayColor',(req,res)=>{
 
     app.delete('/talk', (req, res) => {
       console.log(req.body)
+
       db.collection('messages').findOneAndDelete({'msg.userName': req.body.name,'msg.msg': req.body.msg}, (err, result) => {
         if (err) return res.send(500, err)
         res.send('Message deleted!')

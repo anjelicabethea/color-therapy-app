@@ -20,6 +20,7 @@ background-color:#ebf2f2;
 }
 .yw{
  color: #cfa50c;
+
 }
 .pe{
  color: purple;
@@ -37,6 +38,7 @@ background-color:#ebf2f2;
 }
 .rd{
  color: red;
+
 }
 #b{
  height: 20px;
@@ -63,46 +65,61 @@ img{
  background-color: white;
  border-radius: 5%;
 }
-
+.close{
+margin-bottom: 2%;
+}
 .red {
- border: 2px solid red;
- background: transparent;
+ border: 2px solid #b51340;
+ background: red;
  height: 35px;
  width: 89px;
  outline: 0;
+ float:left;
+ margin-left: 25%;
 }
 
 .blue {
- border: 2px solid blue;
- background: transparent;
+ border: 2px solid  #23bfcf;
+ background:#340ecd;
  height: 35px;
  width: 89px;
  outline: 0;
+  float:left;
+margin-left: 5%;
 }
 
 .green {
- border: 2px solid green;
- background: transparent;
+ border: 2px solid #95e295;
+ background: green;
  height: 35px;
  width: 89px;
  outline: 0;
+  float:left;
+margin-left: 5%;
+
 }
 
 .purple {
- border: 2px solid purple;
- background: transparent;
+ border: 2px solid #d894d5;
+ background: purple;
  height: 35px;
  width: 89px;
  outline: 0;
+  float:left;
+margin-left: 5%;
 }
 
 
 .yellow {
  border: 2px solid yellow;
- background: transparent;
+ background: #cfa50c;
  height: 35px;
  width: 89px;
  outline: 0;
+ color:white!;
+  float:left;
+margin-left: 5%;
+
 }
 .whole{
  border:2px solid white;
@@ -110,11 +127,16 @@ img{
  float: left;
 }
 .use{
- border:2px solid white;
- width:50%;
-float:left;
-}
 
+ width:100%;
+
+}
+.leap{
+  display:block;
+  width:100%;
+  float:left;
+  margin-bottom: 3%;
+}
 /*
 Design by TEMPLATED
 http://templated.co
@@ -131,12 +153,7 @@ body {
 .signUp p a{
 
 }
-h1, h2, h3 {
- margin: 0;
- padding: 0;
- font-weight: 300;
- color: black;
-}
+
 
 h1 {
    font-size: 6em;
@@ -144,6 +161,7 @@ h1 {
 
 h2 {
  font-size: 2em;
+ color:white;
 }
 
 h3 {
