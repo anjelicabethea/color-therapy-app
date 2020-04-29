@@ -1,7 +1,7 @@
 body{
  padding-top:80px;
  /* word-wrap:break-word; */
-    font-family: 'Neuton', serif;
+
     color: black;
    text-align: center;
 background-color:#ebf2f2;
@@ -132,14 +132,15 @@ body {
 
 }
 h1, h2, h3 {
- margin: 0;
+margin: 22px;
  padding: 0;
- font-weight: 300;
+
  color: black;
 }
 
 h1 {
    font-size: 6em;
+   font-weight: 300;
 }
 
 h2 {
@@ -599,6 +600,10 @@ a:hover {
  padding: 10px 0px 50px 0px;
 
 }
+#firstBox{
+  background-color: #ebf2f2;
+  border:2px solid  #ebf2f2;
+}
 
 #three-column .tbox1 {
  float: left;
@@ -626,7 +631,7 @@ a:hover {
   margin-left: 10px;
 border: 2px solid #54b2a0;
 height: 300px;
- background-color:transparent;
+ background-color:#9e9e9e33;
 }
 
 
@@ -634,14 +639,14 @@ height: 300px;
 {
 border: 2px solid #54b2a0;
  height: 300px;
- background-color:transparent;
+ background-color:#9e9e9e33;
 }
 
 .box-style03
 {
 border: 2px solid #54b2a0;
  height: 300px;
- background-color:transparent;
+ background-color:#9e9e9e33;
 }
 
 

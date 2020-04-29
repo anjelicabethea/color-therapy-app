@@ -1,21 +1,45 @@
   <!DOCTYPE html>
   <html>
-    <head>
 
-        <meta name="viewport" content="width-device-width, initial-scale-1.0">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <title>My Chart.js Chart</title>
-    </head>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Neuton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="profile.css" />
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>My Chart.js Chart</title>
+  </head>
+
   </html>
-</head>
-<body>
-  <h1>Graph</h1>
-<div class="ct-chart ct-perfect-fourth"></div>
-<div class="container">
-  <canvas id="myChart"></canvas>
-</div>
+  </head>
 
-<!-- <script>
+  <body>
+    <div id="menu-wrapper">
+      <div id="menu" class="container">
+        <ul>
+          <li class="current_page_item"><a href="#">Homepage</a></li>
+          <li><a href="/newsfeed">Newsfeed</a></li>
+          <li><a href="/calendar">My Graph</a></li>
+          <!-- <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li> -->
+        </ul>
+      </div>
+    </div>
+    <h1>My Graph</h1>
+    <div class="ct-chart ct-perfect-fourth"></div>
+    <div class="container">
+      <select name='color'>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <button name="button" id="submit">Submit</button>
+
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- <script>
 let myChart = document.getElementById('myChart').getContext('2d');
 
 // Global Options
@@ -80,6 +104,7 @@ tooltips:{
 }
 });
 </script> -->
-<script src="/chart.js"></script>
-</body>
-</html>
+    <script src="/chart.js"></script>
+  </body>
+
+  </html>

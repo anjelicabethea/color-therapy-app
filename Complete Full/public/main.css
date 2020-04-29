@@ -6,8 +6,8 @@
 }
 .grid-item {
   /* red green blue alpha! */
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: #9e9e9e33;
+  border: 2px solid #54b2a0;
   padding: 20px;
   font-size: 30px;
   text-align: center;
@@ -80,10 +80,12 @@ ul, li {
 
 /*---------------------------------------------*/
 input {
-	outline: none;
-	border: 2px solid grey;
-  height: 30px;
+  background-color: #9e9e9e33;
+  border: 2px solid #54b2a0;
+  height: 50px;
   padding: 0px 26px 3px;
+  font-size:20px;
+  margin-right: 1%;
 
 }
 
@@ -109,8 +111,19 @@ textarea:-ms-input-placeholder { color: #4b2354;}
 /*---------------------------------------------*/
 button {
 	outline: none !important;
-	border: none;
-	background: transparent;
+  display: inline-block;
+      margin: 1em 0em;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 30px 47px;
+      min-width: 160px;
+      height: 50px;
+      background-color: #54b2a0;
+      margin-bottom: 20px;
+      font-family: 'Neuton', serif;
+      font-size: 31px;
+      color: #fff;
+      line-height: 1.2;
 }
 
 button:hover {

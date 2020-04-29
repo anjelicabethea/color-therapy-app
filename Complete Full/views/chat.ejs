@@ -3,14 +3,26 @@
 
 <head>
   <title>Color Therapy</title>
-  <!-- <link rel="stylesheet" href="/private.css"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="/main.css"> -->
+
   <link rel="stylesheet" href="/vent.css">
+  <link href="https://fonts.googleapis.com/css2?family=Neuton&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
-  <a href="/profile">
+  <div id="menu-wrapper">
+    <div id="menu" class="container">
+      <ul>
+        <li class="current_page_item"><a href="#">Homepage</a></li>
+        <li><a href="/newsfeed">Newsfeed</a></li>
+        <li><a href="/calendar">My Graph</a></li>
+        <!-- <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li> -->
+      </ul>
+    </div>
+  </div>
+
     <h1 class="titleR">Color Therapy Chat</h1>
   </a>
 
@@ -28,7 +40,10 @@
           <div class="comment-head">
             <h6 class="comment-name">
               <span data-id='<%= messages[i]._id %>'><%= messages[i].name%></span></h6>
-            <i class="fa fa-reply"></i>
+              <div class="">
+
+              </div>
+
             <button class="remove">delete</button>
           </div>
           <div class="comment-content">

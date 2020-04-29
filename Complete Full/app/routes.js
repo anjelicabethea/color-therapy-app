@@ -60,6 +60,41 @@ module.exports = function(app, passport, db, ObjectId){
       })
     })
   });
+
+  app.put('/colorcount', function(req, res) {
+    var uId = ObjectId(req.session.passport.user)
+    console.log(req.body);
+    let colorchosen = req.body.color
+    let search = 'local.' + colorchosen
+    console.log(uId)
+    db.collection('users').findOneAndUpdate({'_id': uId}, {
+
+      $inc: {[search]: 1}
+
+    }, {
+      sort: {_id: 1},
+      upsert: false
+    }, (err, result) => {
+      if (err) return console.log(err)
+      res.render('calender.ejs', {
+        user : req.user,
+      })
+    })
+  });
+
+  app.get('/getcolorcount', isLoggedIn, function(req, res) {
+    console.log(req._passport.session.user)
+    let userId = ObjectId(req._passport.session.user)
+    db.collection('users').find({'_id': userId}).toArray((err, result) => {
+      // console.log(result)
+      if (err) return console.log(err)
+      res.json(result)
+    })
+  });
+
+
+
+
 //chatroom===
 //pass query apram get color
 app.get('/chat/:room', function(req, res) {
